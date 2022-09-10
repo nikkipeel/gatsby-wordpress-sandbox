@@ -1,0 +1,13 @@
+:root {
+  --primary: #045174; /* Teal */
+  --secondary: #2f2f59; /* Purple */
+  --accent: #e87a00; /* Orange */
+  --highlight: #ffb85d; /* Light Orange*/
+  --white: #fcf8f5;
+  --black: #251e20;
+
+  /* Fonts */
+  --heading-h1: "rig-solid-bold-fill", Impact, Helvetica;
+  --heading: "maple-web", Helvetica, ui-sans-serif;
+  --body: "guanabara-sans", Helvetica, ui-sans-serif, sans-serif;
+}

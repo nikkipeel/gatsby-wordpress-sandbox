@@ -47,12 +47,17 @@ exports.createPages = ({ graphql, actions }) => {
         const recipesUnderContentTemplate = path.resolve(
           "./src/templates/recipesUnderContent.js"
         )
+        const tripsUnderContentTemplate = path.resolve(
+          "./src/templates/tripsUnderContent.js"
+        )
         _.each(result.data.wpgraphql.pages.edges, edge => {
           createPage({
             path: `/${edge.node.slug}/`,
             component: slash(
               edge.node.template.templateName === "Recipe Items Below Content"
                 ? recipesUnderContentTemplate
+                : edge.node.template.templateName === "Trip Items Below Content"
+                ? tripsUnderContentTemplate
                 : pageTemplate
             ),
             context: edge.node,
@@ -141,6 +146,48 @@ exports.createPages = ({ graphql, actions }) => {
           resolve()
         })
       })
-    // ==== END RECIPES ====
+      // ==== END RECIPES ====
+      // ==== TRIPS =====
+      .then(() => {
+        graphql(
+          `
+            {
+              wpgraphql {
+                trips {
+                  edges {
+                    node {
+                      content
+                      slug
+                      title
+                      date
+                      featuredImage {
+                        node {
+                          sourceUrl
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            console.log(result.errors)
+            reject(result.errors)
+          }
+          const tripTemplate = path.resolve("./src/templates/trip.js")
+
+          _.each(result.data.wpgraphql.trips.edges, edge => {
+            createPage({
+              path: `/trips/${edge.node.slug}/`,
+              component: slash(tripTemplate),
+              context: edge.node,
+            })
+          })
+          resolve()
+        })
+      })
+    // ==== END TRIPS ====
   })
 }

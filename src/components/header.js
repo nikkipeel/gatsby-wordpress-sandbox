@@ -4,12 +4,12 @@ import styled from "styled-components"
 import "./layout.css"
 
 const HeaderStyles = styled.header`
-  background: var(--secondary);
+  background: var(--primary);
   padding: 2rem;
-  color: var(--white);
+  color: var(--neutral-lightest);
 `
 const HeaderCrumb = styled(Link)`
-  color: var(--white);
+  color: var(--neutral);
   font-family: var(--heading);
 `
 
@@ -21,6 +21,8 @@ const HeaderWrapper = styled.div`
     max-width: 90vw;
   }
 `
+
+// Todos: add in Gatsby Breadcrumbs to show parent page(s)
 const Header = ({ pageTitle }) => {
   return (
     <HeaderStyles>

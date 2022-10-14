@@ -1,10 +1,16 @@
 :root {
-  --primary: #045174; /* Teal */
-  --secondary: #2f2f59; /* Purple */
-  --accent: #e87a00; /* Orange */
-  --highlight: #ffb85d; /* Light Orange*/
-  --white: #fcf8f5;
-  --black: #251e20;
+  --primary: #537479; /* Teal */
+  --secondary: #774836; /* Brown */
+  --accent: #41354d; /*Purple */
+  --highlight: #ee592e; /* Bold Orange */
+
+  --neutral: #f3cda9; /* Very light orange */
+  --neutral-light: #f9e1c9;
+  --neutral-lightest: #fefaf6;
+  --neutral-dark: #27202e; /* Dark Purple */
+  --neutral-darkest: #1e120d; /* Dark Brown */
+
+  --text-primary: #41354d;
 
   /* Fonts */
   --heading-h1: "rig-solid-bold-fill", Impact, Helvetica;

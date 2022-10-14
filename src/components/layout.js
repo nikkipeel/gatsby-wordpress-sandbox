@@ -4,13 +4,14 @@ import { StaticQuery, graphql } from "gatsby"
 import MainMenu from "./MainMenu"
 import { createGlobalStyle } from "styled-components"
 import "./layout.css"
+import Footer from "./footer"
 
 const GlobalStyles = createGlobalStyle`
 body {
   font-size: 16px;
   font-family: var(--body);
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--neutral-lightest);
+  color: var(--neutral-dark);
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -42,7 +43,7 @@ h2, h3, h4, h5 {
 }
 blockquote {
   font-family: var(--heading);
-  border-left: 3px solid #121212;
+  border-left: 4px solid var(--highlight);
   padding-left: 1.5rem;
 }
 a {
@@ -88,6 +89,7 @@ const Layout = ({ children }) => (
     <GlobalStyles />
     <MainMenu />
     {children}
+    <Footer></Footer>
   </>
 )
 

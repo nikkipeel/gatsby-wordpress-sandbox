@@ -8,7 +8,7 @@ const FeaturedImage = styled.img`
   margin: 1rem 0;
 `
 
-const RecipeHeader = styled.div`
+const TripHeader = styled.div`
   display: flex;
   flex-direction: column;
 `
@@ -22,16 +22,16 @@ const ContentWrapper = styled.div`
   }
 `
 
-const Recipe = ({ pageContext }) => (
+const Trip = ({ pageContext }) => (
   <Layout>
     {pageContext.title !== "Home" && (
       <Header pageTitle={pageContext.title}></Header>
     )}
 
     <ContentWrapper>
-      <RecipeHeader>
+      <TripHeader>
         <strong>{pageContext.date}</strong>
-      </RecipeHeader>
+      </TripHeader>
       <FeaturedImage
         src={pageContext.featuredImage.node.sourceUrl}
         alt=""
@@ -42,4 +42,4 @@ const Recipe = ({ pageContext }) => (
   </Layout>
 )
 
-export default Recipe
+export default Trip

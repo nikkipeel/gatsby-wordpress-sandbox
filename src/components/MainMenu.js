@@ -5,7 +5,7 @@ import SiteInfo from "./SiteInfo"
 
 const MainMenuWrapper = styled.nav`
   display: flex;
-  background-color: var(--black);
+  background-color: var(--neutral-dark);
 `
 
 const MainMenuInner = styled.div`
@@ -22,7 +22,7 @@ const MainMenuInner = styled.div`
 `
 
 const MenuItem = styled(Link)`
-  color: var(--white);
+  color: var(--neutral-light);
   display: block;
   padding: 8px 16px;
   text-decoration: none;

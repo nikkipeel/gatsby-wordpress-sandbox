@@ -2,23 +2,15 @@ import React from "react"
 import Layout from "../components/layout"
 import Recipes from "../components/Recipes"
 import Header from "../components/header"
-import styled from "styled-components"
+import BreadCrumbs from "../components/BreadCrumbs"
 
-const ContentWrapper = styled.div`
-  max-width: 960px;
-  margin: 3rem auto;
-
-  @media and (max-width: 1023px) {
-    max-width: 90vw;
-  }
-`
-
-const RecipesUnderContent = ({ pageContext }) => (
+const RecipesUnderContent = ({ location, pageContext }) => (
   <Layout>
     <Header pageTitle={pageContext.title}></Header>
-    <ContentWrapper>
+    <BreadCrumbs pageContext={pageContext} location={location} />
+    <div className="content-wrapper">
       <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
-    </ContentWrapper>
+    </div>
     <Recipes></Recipes>
   </Layout>
 )

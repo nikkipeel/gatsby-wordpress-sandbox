@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import "./layout.css"
 
@@ -7,10 +6,6 @@ const HeaderStyles = styled.header`
   background: var(--primary);
   padding: 2rem;
   color: var(--neutral-lightest);
-`
-const HeaderCrumb = styled(Link)`
-  color: var(--neutral);
-  font-family: var(--heading);
 `
 
 const HeaderWrapper = styled.div`
@@ -28,7 +23,6 @@ const Header = ({ pageTitle }) => {
     <HeaderStyles>
       <HeaderWrapper>
         <h1>{pageTitle}</h1>
-        <HeaderCrumb to="/">Home</HeaderCrumb>
       </HeaderWrapper>
     </HeaderStyles>
   )

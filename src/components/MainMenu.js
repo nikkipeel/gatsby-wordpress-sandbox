@@ -1,24 +1,21 @@
 import React from "react"
+import { elastic as Menu } from "react-burger-menu"
 import { graphql, StaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 import SiteInfo from "./SiteInfo"
+import "./menu.css"
 
 const MainMenuWrapper = styled.nav`
   display: flex;
   background-color: var(--neutral-dark);
+  min-height: 80px;
+  height: max-content;
 `
-
-const MainMenuInner = styled.div`
+const MenuItems = styled.div`
   display: flex;
-  align-items: center;
-  height: 100%;
-  width: 960px;
-  max-width: 960px;
-  margin: 0 auto;
-
-  @media screen and (max-width: 1023px) {
-    max-width: 90vw;
-  }
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
 `
 
 const MenuItem = styled(Link)`
@@ -49,14 +46,29 @@ const MainMenu = () => (
     `}
     render={props => (
       <MainMenuWrapper>
-        <MainMenuInner>
+        <div className="main-menu">
+          <SiteInfo />
+          <MenuItems>
+            {props.allWpMenu.edges[0].node.menuItems.nodes.map(item => (
+              <MenuItem to={item.path} key={item.id}>
+                {item.label}
+              </MenuItem>
+            ))}
+          </MenuItems>
+        </div>
+        <Menu
+          className="mobile-menu"
+          right
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+        >
           <SiteInfo />
           {props.allWpMenu.edges[0].node.menuItems.nodes.map(item => (
-            <MenuItem to={item.path} key={item.id}>
+            <Link to={item.path} key={item.id}>
               {item.label}
-            </MenuItem>
+            </Link>
           ))}
-        </MainMenuInner>
+        </Menu>
       </MainMenuWrapper>
     )}
   />

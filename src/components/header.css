@@ -1,0 +1,92 @@
+/* Breadcrumbs */
+.breadcrumbs,
+nav.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: var(--secondary);
+    color: var(--neutral-lightest); */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+@media screen and (max-width: 1023px) {
+  .breadcrumbs {
+    max-width: 90vw;
+    margin: 0 1.5rem;
+  }
+}
+.breadcrumbs svg.home-icon {
+  margin-right: -1rem;
+  z-index: 25;
+}
+
+@media screen and (min-width: 1024px) {
+  .breadcrumbs svg.home-icon {
+    margin-left: -0.25rem;
+  }
+}
+
+.breadcrumbs svg {
+  width: 22px;
+  height: 1rem;
+}
+
+ol {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  /* background-color: var(--secondary);
+    color: var(--neutral-lightest); */
+  padding: 1rem;
+  max-height: 100%;
+}
+
+.breadcrumbs ol li {
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  ol li {
+    margin: 0;
+  }
+}
+
+ol li {
+  display: flex;
+}
+
+ol li a {
+  font-family: "henderson-slab-basic", "Consolas", "Monaco", "ui-monospace",
+    "SFMono-Regular", "monospace";
+  font-size: 0.9rem;
+}
+
+ol li span {
+  font-weight: bold;
+}
+
+ol li a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.4s ease-in-out;
+}
+
+ol li a:hover {
+  text-underline-offset: 6px;
+}
+
+ol li:last-of-type a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+ol li:last-of-type a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.crumb-separator {
+  margin: 0 0.25rem;
+}

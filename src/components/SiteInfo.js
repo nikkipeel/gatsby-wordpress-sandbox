@@ -3,9 +3,8 @@ import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 
 const SiteInfoWrapper = styled.div`
-  flex-grow: 1;
   color: white;
-  margin: 0.5rem 0;
+  margin: 2rem 0;
 `
 
 const SiteTitle = styled.div`

@@ -16,6 +16,11 @@ const FooterContent = styled.div`
   max-width: 1200px;
   margin: 2rem auto;
   text-align: center;
+
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90vw;
+  }
 `
 const FooterLink = styled(Link)`
   color: var(--neutral-lightest);

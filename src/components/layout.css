@@ -13,7 +13,20 @@
   --text-primary: #41354d;
 
   /* Fonts */
-  --heading-h1: "rig-solid-bold-fill", Impact, Helvetica;
-  --heading: "maple-web", Helvetica, ui-sans-serif;
-  --body: "guanabara-sans", Helvetica, ui-sans-serif, sans-serif;
+  --heading-h1: "manteiga-gorda", Impact, Helvetica;
+  --heading: "multi-display", Helvetica, ui-sans-serif;
+  --body: "multi-display", Helvetica, ui-sans-serif, sans-serif;
+  --font-accent: "henderson-slab-basic", serif;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 3rem auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .content-wrapper {
+    max-width: 90vw;
+    margin: 3rem 1.5rem;
+  }
 }

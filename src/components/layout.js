@@ -42,9 +42,10 @@ h2, h3, h4, h5 {
   font-family: var(--heading);
 }
 blockquote {
-  font-family: var(--heading);
+  font-family: var(--font-accent);
   border-left: 4px solid var(--highlight);
   padding-left: 1.5rem;
+  font-weight: 700;
 }
 a {
   font-weight: 500;

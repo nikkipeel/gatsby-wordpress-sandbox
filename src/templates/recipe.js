@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Header from "../components/header"
+import BreadCrumbs from "../components/BreadCrumbs"
 import styled from "styled-components"
 
 const FeaturedImage = styled.img`
@@ -13,22 +14,13 @@ const RecipeHeader = styled.div`
   flex-direction: column;
 `
 
-const ContentWrapper = styled.div`
-  max-width: 960px;
-  margin: 3rem auto;
-
-  @media and (max-width: 1023px) {
-    max-width: 90vw;
-  }
-`
-
-const Recipe = ({ pageContext }) => (
+const Recipe = ({ location, pageContext }) => (
   <Layout>
     {pageContext.title !== "Home" && (
       <Header pageTitle={pageContext.title}></Header>
     )}
-
-    <ContentWrapper>
+    <BreadCrumbs pageContext={pageContext} location={location} />
+    <div className="content-wrapper">
       <RecipeHeader>
         <strong>{pageContext.date}</strong>
       </RecipeHeader>
@@ -38,7 +30,7 @@ const Recipe = ({ pageContext }) => (
       ></FeaturedImage>
 
       <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
-    </ContentWrapper>
+    </div>
   </Layout>
 )
 

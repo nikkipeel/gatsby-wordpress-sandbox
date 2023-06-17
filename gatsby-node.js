@@ -3,6 +3,10 @@ const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 // // Will create pages for Pages (route : /{slug})
 // // Will create pages for Posts (route : /blog/{slug})
 // // Will create pages for Recipes (route : /recipes/{slug})

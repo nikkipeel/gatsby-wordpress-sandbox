@@ -20,11 +20,15 @@ const HeaderWrapper = styled.div`
 // Todos: add in Gatsby Breadcrumbs to show parent page(s)
 const Header = ({ pageTitle }) => {
   return (
-    <HeaderStyles>
-      <HeaderWrapper>
-        <h1>{pageTitle}</h1>
-      </HeaderWrapper>
-    </HeaderStyles>
+    <>
+      {pageTitle !== "Home" && (
+        <HeaderStyles>
+          <HeaderWrapper>
+            <h1>{pageTitle}</h1>
+          </HeaderWrapper>
+        </HeaderStyles>
+      )}
+    </>
   )
 }
 export default Header

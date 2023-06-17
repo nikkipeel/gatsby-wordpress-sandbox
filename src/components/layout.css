@@ -1,9 +1,11 @@
 :root {
-  --primary: #537479; /* Teal */
-  --secondary: #774836; /* Brown */
-  --accent: #41354d; /*Purple */
-  --highlight: #ee592e; /* Bold Orange */
+  --primary: #225560; /* Teal */
+  --secondary: #310d20; /* Maroon */
+  --accent: #f0803c; /* Orange */
+  --highlight: #edf060; /* Yellow */
 
+  --dark: #171219; /* Very dark Maroon */
+  --light: #fcf8f5; /* Off-white */
   --neutral: #f3cda9; /* Very light orange */
   --neutral-light: #f9e1c9;
   --neutral-lightest: #fefaf6;
@@ -13,10 +15,26 @@
   --text-primary: #41354d;
 
   /* Fonts */
-  --heading-h1: "manteiga-gorda", Impact, Helvetica;
-  --heading: "multi-display", Helvetica, ui-sans-serif;
-  --body: "multi-display", Helvetica, ui-sans-serif, sans-serif;
-  --font-accent: "henderson-slab-basic", serif;
+  --heading-h1: "acier-bat-gris", Impact, Helvetica, ui-sans-serif;
+  --heading: "acier-bat-solid", Impact, Helvetica, ui-sans-serif;
+  --font-body: "multi-display", Helvetica, ui-sans-serif, sans-serif;
+  --font-accent: "cafeteria", serif;
+
+  /* Font Sizes */
+  --h1: 64px;
+  --h2: 48px;
+  --h3: 36px;
+  --h4: 32px;
+  --h5: 28px;
+
+  --ts-body: 18px;
+  --ts-meta: 14px;
+
+  /* Breakpoints */
+}
+
+body {
+  font-family: var(--font-body);
 }
 
 .content-wrapper {

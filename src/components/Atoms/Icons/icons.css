@@ -1,0 +1,21 @@
+.icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--light);
+  padding: 1rem;
+}
+
+.icon-container img {
+  width: 32px;
+  height: 32px;
+}

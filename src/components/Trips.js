@@ -54,7 +54,7 @@ const Trips = () => {
                 content={trip.node.excerpt}
                 imageSrc={trip.node.featuredImage.node.sourceUrl}
                 altText={trip.node.featuredImage.node.altText}
-                classes={"card card--trip"}
+                classes={"card card--flip"}
               />
             ))}
           </TripItemsWrapper>

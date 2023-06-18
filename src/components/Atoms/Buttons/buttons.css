@@ -35,3 +35,7 @@
   align-items: center;
   gap: 0.5rem;
 }
+
+.button--with-icon.button--primary {
+  background: var(--primary);
+}

@@ -1,16 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "./buttons.css"
-
+import "./links.css"
 /**
  * Primary UI component for user interaction
- *  link, id, classes, text,
  */
-export const Button = ({ id, link, classes, label, ...props }) => {
+export const Link = ({ label, link, classes, ...props }) => {
   return (
     <a href={link} className={classes} {...props}>
       {label}
-      {classes.includes("button--with-icon") && (
+      {classes.includes("link--with-icon") && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20.414"
@@ -33,7 +31,7 @@ export const Button = ({ id, link, classes, label, ...props }) => {
   )
 }
 
-Button.propTypes = {
+Link.propTypes = {
   link: PropTypes.string.isRequired,
   classes: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,

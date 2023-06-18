@@ -2,7 +2,7 @@ import React from "react"
 import { Colors } from "./Colors"
 
 export default {
-  title: "Design System/Color Palette",
+  title: "Color Palette",
   component: Colors,
 }
 

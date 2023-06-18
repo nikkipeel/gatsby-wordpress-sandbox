@@ -5,9 +5,6 @@
   min-width: calc(33% - 2rem);
   height: 250px;
   min-height: 250px;
-  perspective: 1000px;
-  /* border: 1px solid #efefef; */
-  /* padding: 1rem; */
   margin: 1rem;
   position: relative;
   text-decoration: none;
@@ -32,33 +29,56 @@
   font-weight: 700;
   font-size: 1.5rem;
   text-transform: uppercase;
-  text-align: left;
-  padding-left: 1rem;
-  bottom: -70px;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 5;
 }
 
-.card h2::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background: var(--highlight);
-  filter: brightness(110%);
-  bottom: 0;
+.card.card--basic {
+  padding: 2rem;
+  background: var(--light);
+  box-shadow: -18px 18px 0 var(--accent);
 }
-.card .front,
-.card .back {
+
+.card.card--basic .card-info {
+  margin-bottom: 1rem;
+}
+
+.card.card--flip {
+  perspective: 1000px;
+}
+
+.card .card-title {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  position: relative;
+  bottom: -70px;
+  padding-left: 2rem;
+  z-index: 5;
+  /* background: var(--highlight); */
+}
+
+.card .card-title span {
+  height: 8px;
+  width: 80%;
+  border-radius: 1px;
+  position: relative;
+  background: var(--highlight);
+  transform: skew(-30deg);
+}
+
+.card.card--flip .card-title h2 {
+  text-align: left;
+  width: max-content;
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.card--flip .front,
+.card--flip .back {
   display: flex;
   border-radius: 6px;
   background-position: center;
   background-size: cover;
   text-align: center;
-  justify-content: center;
   align-items: center;
   position: absolute;
   height: 100%;
@@ -69,7 +89,7 @@
   transition: ease-in-out 600ms;
 }
 
-.card .front {
+.card--flip .front {
   background-size: cover;
   font-size: 1.6rem;
   font-weight: 600;
@@ -78,7 +98,17 @@
   font-family: sans-serif;
 }
 
-.card .front::before {
+.card--flip img {
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.card--flip h2 {
+  z-index: 3;
+}
+
+.card--flip .overlay {
   position: absolute;
   display: block;
   content: "";
@@ -86,45 +116,40 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    adjust-hue(var(--primary), -20deg),
-    var(--primary)
-  );
-  opacity: 0.25;
-  z-index: 1;
+  background: linear-gradient(transparent 20px, var(--dark));
+  z-index: 2;
 }
 
-.card:hover .front {
+.card--flip:hover .front {
   transform: rotateY(180deg);
 }
 
-.card:nth-child(even) .front {
+.card--flip:nth-child(even) .front {
   transform: rotateY(-180deg);
 }
 
-.card .back {
+.card--flip .back {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  background: var(--primary);
-  filter: brightness(110%);
-  color: var(--neutral-lightest);
+  align-items: start;
+  gap: 1rem;
+  text-align: left;
+  background: var(--highlight);
+  color: var(--dark);
   transform: rotateY(-180deg);
 }
 
-.card .back button {
-  background: var(--accent);
+.card--flip .card-info,
+.card--flip strong {
+  padding: 2rem;
 }
 
-.card .back button::before {
-  box-shadow: 0 0 10px 10px rgba(83, 116, 121, 0.25);
-  background-color: rgba(83, 116, 121, 0.25);
-}
-
-.card:hover .back {
+.card--flip:hover .back {
   transform: rotateY(0deg);
 }
 
+/* 
 .card:nth-child(even) .back {
   transform: rotateY(180deg);
 }
@@ -140,67 +165,4 @@
 
 .card:nth-child(even):hover .back {
   transform: rotateY(0deg);
-}
-
-button {
-  height: 40px;
-  transform: translateZ(40px);
-  cursor: pointer;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  font-weight: bold;
-  color: #ffffff;
-  padding: 0.5em 1em;
-  border-radius: 100px;
-  font-family: inherit;
-  border: none;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: 300ms ease;
-}
-
-button::before {
-  transition: 300ms ease;
-  position: absolute;
-  display: block;
-  content: "";
-  transform: translateZ(-40px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  height: 40px;
-  width: calc(100% - 20px);
-  border-radius: 100px;
-  left: 10px;
-  top: 16px;
-}
-
-button:hover {
-  transform: translateZ(55px);
-}
-
-button:hover::before {
-  transform: translateZ(-55px);
-}
-
-/* button:active {
-    transform: translateZ
 } */
-/* .card:hover {
-  transform: scale(1.05);
-}
-.card:hover strong {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-} */
-/* .card img {
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
-} */
-
-.card-info {
-  font-size: 16px;
-  margin-top: 0;
-  margin-left: 1rem;
-  margin-bottom: 3rem;
-}
